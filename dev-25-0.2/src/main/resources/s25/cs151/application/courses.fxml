@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="s25.cs151.application.CoursesController">
+    <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50">
+        <Label text="Define Course" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+        <VBox spacing="10" maxWidth="400">
+            <Label text="Course Code:" />
+            <TextField fx:id="courseCodeField" promptText="e.g. CS151" />
+
+            <Label text="Course Name:" />
+            <TextField fx:id="courseNameField" promptText="e.g. Object-Oriented Design" />
+
+            <Label text="Section Number:" />
+            <TextField fx:id="sectionNumberField" promptText="e.g. 01" />
+        </VBox>
+
+        <HBox spacing="20">
+            <Button text="Save" onAction="#onSaveCourseClick" styleClass="rounded-button" />
+            <Button text="Cancel" onAction="#onCancelClick" styleClass="rounded-button" />
+            <Button text ="Back to Dashboard" onAction="#onBackToDashboardClick" styleClass="rounded-button"/>
+        </HBox>
+
+        <Label text="Stored Courses" style="-fx-font-size: 18px; -fx-padding: 10 0 0 0;" />
+
+        <TableView fx:id="coursesTable" prefWidth="600">
+            <columns>
+                <TableColumn fx:id="codeColumn" text="Course Code" prefWidth="180" />
+                <TableColumn fx:id="nameColumn" text="Course Name" prefWidth="280" />
+                <TableColumn fx:id="sectionColumn" text="Section" prefWidth="120" />
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

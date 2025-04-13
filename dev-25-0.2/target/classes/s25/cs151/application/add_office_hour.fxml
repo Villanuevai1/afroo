@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="s25.cs151.application.AddOfficeHourController"
+            prefWidth="400" prefHeight="400">
+
+    <VBox spacing="10.0" alignment="TOP_LEFT" layoutX="30" layoutY="20">
+        <padding>
+            <Insets top="20" left="20" right="20" bottom="20"/>
+        </padding>
+
+        <Label text="Add Office Hour" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <Label text="Semester:" />
+        <ComboBox fx:id="semesterComboBox" promptText="Select Semester" prefWidth="200"/>
+
+        <Label text="Year:" />
+        <TextField fx:id="yearTextField" promptText="Enter Year" prefWidth="200"/>
+
+        <Label text="Select Days:" />
+        <HBox spacing="10">
+            <CheckBox fx:id="mondayCheckBox" text="Mon"/>
+            <CheckBox fx:id="tuesdayCheckBox" text="Tue"/>
+            <CheckBox fx:id="wednesdayCheckBox" text="Wed"/>
+            <CheckBox fx:id="thursdayCheckBox" text="Thu"/>
+            <CheckBox fx:id="fridayCheckBox" text="Fri"/>
+        </HBox>
+
+       <Label text="Time Slot:" />
+         <TextField fx:id="timeTextField" promptText="e.g. 3:00–4:00 PM" prefWidth="200"/>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Save" onAction="#onSaveOfficeHourClick" />
+            <Button text="Cancel" onAction="#onCancelClick" />
+        </HBox>
+    </VBox>
+</AnchorPane>

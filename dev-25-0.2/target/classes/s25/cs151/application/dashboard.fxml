@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.TextField?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/javafx"
+            fx:controller="s25.cs151.application.MainController"
+            stylesheets="@styles.css">
+    <!-- Top navigation bar -->
+
+    <HBox spacing="20.0" alignment="CENTER_LEFT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+          style="-fx-background-color: white; -fx-padding: 10 20 10 20; -fx-border-color: lightgrey; -fx-border-width: 0 0 1 0;">
+
+
+        <Label text="ClockInEdu" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <!-- Spacer to center search bar -->
+
+        <Region HBox.hgrow="ALWAYS" /> <!-- Spacer to push search bar to center -->
+
+        <TextField promptText="Search..." styleClass="search-bar" />
+
+        <Region HBox.hgrow="ALWAYS" /> <!-- Spacer to push right items to right edge -->
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Label text="🔔" style="-fx-font-size: 18px;" />
+            <Label text="👤 " style="-fx-font-size: 18px;" />
+        </HBox>
+
+    </HBox>
+
+    <!-- Sidebar menu for navigation -->
+
+    <VBox alignment="CENTER" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <Button text="Dashboard" style="-fx-background-color: #6A5ACD; -fx-text-fill: white;"/>
+        <Button text=" 🏠 Home" styleClass="sidebar-button"/>
+        <Button text="📅 Appointments" styleClass="sidebar-button"/>
+        <Button text="📚 Courses" styleClass="sidebar-button"/>
+        <Button text="💬 Messages" styleClass="sidebar-button"/>
+        <Button text="⚙️ Settings" styleClass="sidebar-button"/>
+        <Button text="Sign Out" styleClass="sidebar-button"/>
+
+    </VBox>
+
+    <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="90.0">
+        <Label text="Homepage" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+
+        <!-- Grid for displaying office hours schedule -->
+        <VBox spacing="10.0" style="-fx-background-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px;
+                                     -fx-padding: 20px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+            <Label text="Office Hours" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+            <GridPane hgap="10" vgap="5">
+                <Label text="Monday" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <Label text="4:30 – 5:30" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                <Label text="Tuesday" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <Label text="1:30 – 2:30" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                <Label text="Wednesday" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <Label text="4:30 – 5:30" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                <Label text="Thursday" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <Label text="4:30 – 5:30" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                <Label text="Friday" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                <Label text="11:30 – 1:30" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+            </GridPane>
+
+            <!-- Action buttons for office hours -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Courses" styleClass="rounded-button" onAction="#onManageCoursesClick"/>
+                <Button text="Manage Office Hours" styleClass="rounded-button" onAction="#onManageOfficeHoursClick"/>
+                <Button text = "Time Slots" styleClass="rounded-button" onAction="#onManageTimeClick"/>
+                <Button text="Manage Office Hour Entries" onAction="#onManageEntriesClick" styleClass="rounded-button" />
+            </HBox>
+        </VBox>
+    </VBox>
+
+</AnchorPane>

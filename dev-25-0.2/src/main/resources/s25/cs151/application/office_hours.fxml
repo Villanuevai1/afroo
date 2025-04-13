@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="s25.cs151.application.OfficeHoursController"
+            prefWidth="800" prefHeight="600">
+
+    <VBox layoutX="50" layoutY="50" spacing="10">
+
+        <TableView fx:id="officeHoursTable" prefWidth="700" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="semesterColumn" text="Semester" prefWidth="150"/>
+                <TableColumn fx:id="yearColumn" text="Year" prefWidth="100"/>
+                <TableColumn fx:id="daysColumn" text="Days" prefWidth="250"/>
+                <TableColumn fx:id="timeColumn" text="Time" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10">
+            <Button text="Add Office Hour" onAction="#onAddOfficeHourClick"/>
+            <Button text="Remove Selected" onAction="#onRemoveOfficeHourClick"/>
+            <Button text="Back to Dashboard" onAction="#onBackToDashboardClick"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="s25.cs151.application.EntriesController" prefWidth="800" prefHeight="600">
+    <VBox spacing="12" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <Label text="Scheduled Office Hour Entries" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <TableView fx:id="entriesTable" prefHeight="500">
+            <columns>
+                <TableColumn fx:id="studentNameColumn" text="Student Name" prefWidth="130" />
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="100" />
+                <TableColumn fx:id="timeSlotColumn" text="Time Slot" prefWidth="120" />
+                <TableColumn fx:id="courseColumn" text="Course" prefWidth="100" />
+                <TableColumn fx:id="reasonColumn" text="Reason" prefWidth="150" />
+                <TableColumn fx:id="commentColumn" text="Comment" prefWidth="180" />
+
+            </columns>
+        </TableView>
+        <Button text="+ Add Entry" onAction="#onAddEntryClick" styleClass="rounded-button" maxWidth="150" />
+        <Button text="Back to Dashboard" onAction="#onBackToDashboardClick" styleClass="rounded-button" maxWidth="150" />
+    </VBox>
+</AnchorPane>
